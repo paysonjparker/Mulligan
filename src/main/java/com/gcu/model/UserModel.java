@@ -39,7 +39,7 @@ public class UserModel {
 	
 	/**
 	 * @param userId User's unique ID number.
-	 * @param username User's username.
+	 * @param username User's user name.
 	 * @param password User's password.
 	 * @param name User's full name.
 	 * @param email User's email address.
