@@ -5,12 +5,15 @@ package com.gcu.data;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.gcu.model.UserModel;
 
 /**
  * @author paysonparker
  *
  */
+@Service
 public class UserDataService implements DataAccessInterface<UserModel> {
 
 	@Override
