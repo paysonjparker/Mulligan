@@ -15,7 +15,7 @@ import com.gcu.model.UserModel;
  */
 @Service
 public class UserDataService implements DataAccessInterface<UserModel> {
-
+	
 	@Override
 	public List<UserModel> findAll() {
 		// TODO Auto-generated method stub
