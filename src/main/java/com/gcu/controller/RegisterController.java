@@ -19,10 +19,9 @@ import com.gcu.model.UserModel;
  *
  */
 @Controller
-@RequestMapping("/register")
 public class RegisterController {
 	
-	@GetMapping("/")
+	@GetMapping("/register")
 	public String display(Model model) {
 		return "register";
 	}
