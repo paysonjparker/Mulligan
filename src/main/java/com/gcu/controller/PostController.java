@@ -36,8 +36,8 @@ public class PostController {
 			return "index";
 	}
 	
-	@GetMapping("/edit")
-	public String edit(Model model, @RequestParam(name="id", required = true) Integer postId) 
+	@GetMapping("/editPost")
+	public String editPost(Model model, @RequestParam(name="id", required = true) Integer postId) 
 	{
 		return "editPost";
 	}
