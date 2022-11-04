@@ -63,6 +63,11 @@
     		<groupId>org.springframework.boot</groupId> 
     		<artifactId>spring-boot-starter-validation</artifactId> 
 		</dependency>
+		<!-- Thyme leaf layout dialect -->
+		<dependency>
+			<groupId>nz.net.ultraq.thymeleaf</groupId>
+			<artifactId>thymeleaf-layout-dialect</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
