@@ -12,7 +12,7 @@ public class PostModel {
 	private int postId;
 	private String content;
 	private String postTime;
-	private UserModel author;
+	private String author;
 	
 	/**
 	 * @param postId Post's unique ID number.
@@ -20,7 +20,7 @@ public class PostModel {
 	 * @param postTime The date and time of the post.
 	 * @param author The author of the post.
 	 */
-	public PostModel(int postId, String content, String postTime, UserModel author) {
+	public PostModel(int postId, String content, String postTime, String author) {
 		this.postId = postId;
 		this.content = content;
 		this.postTime = postTime;
@@ -72,14 +72,14 @@ public class PostModel {
 	/**
 	 * @return the author
 	 */
-	public UserModel getAuthor() {
+	public String getAuthor() {
 		return author;
 	}
 
 	/**
 	 * @param author the author to set
 	 */
-	public void setAuthor(UserModel author) {
+	public void setAuthor(String author) {
 		this.author = author;
 	}
 	
