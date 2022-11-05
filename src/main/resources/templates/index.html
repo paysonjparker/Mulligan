@@ -1,13 +1,32 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layouts/defaultLayout">
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Main Menu</title>
-	</head>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layouts/defaultLayout">
 
-	<body>
-	    
-	</body>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Main Menu</title>
+</head>
+
+<body style='background-color:rgb(255, 255, 245)'>
+	<!--Displays main menu-->
+	<div layout:fragment="content">
+		<main id="posts-main" align="center" class="container d-flex flex-wrap">
+			<!--If user is not logged in, display empty main menu-->
+			<div th:if="${posts.empty}">
+				<p align="center">There are currently no posts available.</p>
+			</div>
+			<!--Else, display each Post-->
+			<div th:each="post : ${posts}">
+				<!--Post card-->
+				<div class="post-card">
+					<h5 th:text="${post.getContent()}"></h5>
+				</div>
+			</div>
+		</main>
+
+	</div>
+</body>
+
 </html>
