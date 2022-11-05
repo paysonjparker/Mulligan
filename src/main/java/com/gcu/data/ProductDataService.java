@@ -3,9 +3,15 @@
  */
 package com.gcu.data;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import com.gcu.model.PostModel;
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.support.rowset.SqlRowSet;
+
 import com.gcu.model.PostModel;
 
 /**
@@ -14,10 +20,46 @@ import com.gcu.model.PostModel;
  */
 public class ProductDataService implements DataAccessInterface<PostModel> {
 
+	@Autowired
+	@SuppressWarnings("unused")
+	private DataSource dataSource;
+	
+	private JdbcTemplate jdbcTemplateObject;
+
+	
+	/**
+	 * @param dataSource
+	 */
+	public ProductDataService(DataSource dataSource) {
+		
+		this.dataSource = dataSource;
+		this.jdbcTemplateObject = new JdbcTemplate(dataSource);
+	}
+
 	@Override
 	public List<PostModel> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		String sql = "SELECT * FROM MulliganDB.post";
+		List<PostModel> posts = new ArrayList<PostModel>();
+		try 
+		{
+			// Executes SQL query
+			SqlRowSet srs = jdbcTemplateObject.queryForRowSet(sql);
+			// Loops through results of query
+			while(srs.next()) 
+			{
+				posts.add(new PostModel(srs.getInt("postId"), 
+											srs.getString("content"),
+											srs.getString("postTime"),
+											srs.getString("author")));
+			}
+		}
+		catch(Exception e) 
+		{
+			e.printStackTrace();
+		}
+		
+		return posts;
 	}
 
 	@Override
