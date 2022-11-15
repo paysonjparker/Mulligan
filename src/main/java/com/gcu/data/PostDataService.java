@@ -18,7 +18,7 @@ import com.gcu.model.PostModel;
  * @author paysonparker
  *
  */
-public class ProductDataService implements DataAccessInterface<PostModel> {
+public class PostDataService implements DataAccessInterface<PostModel> {
 
 	@Autowired
 	@SuppressWarnings("unused")
@@ -30,7 +30,7 @@ public class ProductDataService implements DataAccessInterface<PostModel> {
 	/**
 	 * @param dataSource
 	 */
-	public ProductDataService(DataSource dataSource) {
+	public PostDataService(DataSource dataSource) {
 		
 		this.dataSource = dataSource;
 		this.jdbcTemplateObject = new JdbcTemplate(dataSource);

@@ -16,7 +16,7 @@ import com.gcu.model.PostModel;
  *
  */
 @Service
-public class ProductBusinessService {
+public class PostBusinessService {
 
 //	@Autowired
 	DataAccessInterface<PostModel> service;

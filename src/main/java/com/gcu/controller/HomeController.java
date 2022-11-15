@@ -8,7 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.gcu.business.ProductBusinessService;
+import com.gcu.business.PostBusinessService;
 
 /**
  * @author paysonparker
@@ -18,7 +18,7 @@ import com.gcu.business.ProductBusinessService;
 public class HomeController {
 
 	@Autowired
-	ProductBusinessService productBusinessService;
+	PostBusinessService productBusinessService;
 
 	@GetMapping("/")
 	public String display(Model model) {
