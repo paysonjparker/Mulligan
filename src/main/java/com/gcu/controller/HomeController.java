@@ -23,7 +23,7 @@ public class HomeController {
 	@GetMapping("/")
 	public String display(Model model) {
 
-		model.addAttribute("posts", productBusinessService.getPosts());
+//		model.addAttribute("posts", productBusinessService.getPosts());
 		
 		return "index";
 	}
