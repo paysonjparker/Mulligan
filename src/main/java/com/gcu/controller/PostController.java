@@ -20,11 +20,12 @@ import com.gcu.model.PostModel;
  *
  */
 @Controller
+@RequestMapping("/post")
 public class PostController {
 
 
 	
-	@GetMapping("/post")
+	@GetMapping("/")
 	public String display(Model model) {
 		return "post";
 	}
