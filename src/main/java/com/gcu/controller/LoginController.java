@@ -18,4 +18,6 @@ public class LoginController {
 	public String display(Model model) {
 		return "login";
 	}
+	
+	
 }
