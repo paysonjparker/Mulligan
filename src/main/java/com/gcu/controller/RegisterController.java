@@ -21,7 +21,6 @@ import com.gcu.model.UserModel;
  *
  */
 @Controller
-@RequestMapping("/register")
 public class RegisterController {
 
 	@Autowired
@@ -32,6 +31,7 @@ public class RegisterController {
 
 		// display the register page.
 		model.addAttribute("userModel", new UserModel());
+		model.addAttribute("users", service.getUsers());
 		return "register";
 	}
 
@@ -49,6 +49,6 @@ public class RegisterController {
 //		model.addAttribute("posts", postBusinessService.getPosts());
 
 		// Returns main menu view
-		return "index";
+		return "register";
 	}
 }
