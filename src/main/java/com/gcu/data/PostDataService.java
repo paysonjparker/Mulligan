@@ -59,6 +59,9 @@ public class PostDataService implements DataAccessInterface<PostModel> {
 			e.printStackTrace();
 		}
 		
+		//test post
+		posts.add(new PostModel(1, "Test post content", "1 pm", "Payson"));
+		
 		return posts;
 	}
 
