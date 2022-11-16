@@ -1,13 +1,48 @@
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layouts/defaultLayout">
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Login</title>
-	</head>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layouts/defaultLayout">
 
-<body>
-	
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login</title>
+</head>
+
+<body onload="select_bg()">
+	<!--Displays login module-->
+	<div layout:fragment="content">
+		<div class="widget-background">
+			<div class="pop-up-widget">
+				<header>
+					<h1>Log-in</h1>
+				</header>
+
+				<div th:if="${param.error}">
+					Invalid User Name or Password.
+				</div>
+				<form th:action="@{/login}" method="post">
+					<table>
+						<tr>
+							<td style="padding:5px">User Name:</td>
+							<td style="padding:5px"><input type="text" name="username" id="username"
+									placeholder="Username" required /></td>
+						</tr>
+						<tr>
+							<td style="padding:5px">Password:</td>
+							<td style="padding:5px"><input type="password" name="password" id="password"
+									placeholder="Password" required /></td>
+						</tr>
+						<tr>
+							<td colspan="2" align="center"><input type="submit" value="Sign In" /></td>
+						</tr>
+						<tr>
+							<td><br>Don't have an account?<br><a href="/register/">Create one</a> for free!</td>
+						</tr>
+					</table>
+				</form>
+			</div>
+		</div>
+	</div>
 </body>
 
 </html>
