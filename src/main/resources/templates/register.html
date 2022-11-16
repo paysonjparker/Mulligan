@@ -1,4 +1,6 @@
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layouts/defaultLayout">
 
 <head>
 	<meta charset="UTF-8">
@@ -7,7 +9,7 @@
 	<title>Register</title>
 </head>
 
-<body onload="select_bg()">
+<body>
 	<!--Displays Registration module-->
 	<div layout:fragment="content">
 		<div class="widget-background">
@@ -105,7 +107,7 @@
 						</tr>
 					</table>
 				</form>
-				
+
 				Here are all the registered users:
 				<div th:each="user : ${users}">
 					<!--Post card-->
