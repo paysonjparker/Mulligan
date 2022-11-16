@@ -21,12 +21,13 @@ import com.gcu.model.UserModel;
  *
  */
 @Controller
+@RequestMapping("/register")
 public class RegisterController {
 
 	@Autowired
 	UserBusinessService service;
 
-	@GetMapping("/register")
+	@GetMapping("/")
 	public String display(Model model) {
 
 		// display the register page.
