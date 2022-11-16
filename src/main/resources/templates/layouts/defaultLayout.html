@@ -1,35 +1,37 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-	<head>
-    	<meta charset="UTF-8">
-    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    	<title>Default Layout Template</title>
-    	
-    	<!--Custom CSS-->
-    	<link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">
-    	<script th:src="@{/js/main.js}"></script>
-    	
-    	<!--Bootstrap/Thymeleaf imports-->
-    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
-    	<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.0/css/responsive.dataTables.css">
 
-    	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-		<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-     	<script src="//cdn.datatables.net/responsive/2.2.0/js/dataTables.responsive.js"></script>
-	</head>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Default Layout Template</title>
 
-	<body>
-		<div align="center">
-			<!--Insert header fragment-->
-			<div th:replace="layouts/navbar :: header">Header</div>
-			
-			<!--Insert body fragment-->
-			<div layout:fragment="content">My Body Content</div>
+	<!--Custom CSS-->
+	<link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">
+	<script th:src="@{/js/main.js}"></script>
 
-		</div>
-	</body>
+	<!--Bootstrap/Thymeleaf imports-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.0/css/responsive.dataTables.css">
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="//cdn.datatables.net/responsive/2.2.0/js/dataTables.responsive.js"></script>
+</head>
+
+<body>
+	<div align="center">
+		<!--Insert header fragment-->
+		<div th:replace="layouts/navbar :: header">Header</div>
+
+		<!--Insert body fragment-->
+		<div layout:fragment="content">My Body Content</div>
+
+	</div>
+</body>
+
 </html>
