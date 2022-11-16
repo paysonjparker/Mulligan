@@ -26,6 +26,10 @@
 		<div align="center">
 			<!--Insert header fragment-->
 			<div th:replace="layouts/navbar :: header">Header</div>
+			
+			<!--Insert body fragment-->
+			<div layout:fragment="content">My Body Content</div>
+
 		</div>
 	</body>
 </html>
