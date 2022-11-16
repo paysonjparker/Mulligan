@@ -1,5 +1,4 @@
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	layout:decorate="layouts/defaultLayout">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
 <head>
 	<meta charset="UTF-8">
@@ -39,7 +38,8 @@
 						</tr>
 						<tr>
 							<td>
-								<h5 style="color:red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password
+								<h5 style="color:red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">
+									Password
 									Error</h5>
 							</td>
 						</tr>
@@ -76,7 +76,8 @@
 						</tr>
 						<tr>
 							<td>
-								<h5 style="color:red" th:if="${#fields.hasErrors('homeCourse')}" th:errors="*{homeCourse}">
+								<h5 style="color:red" th:if="${#fields.hasErrors('homeCourse')}"
+									th:errors="*{homeCourse}">
 									Home Course Error</h5>
 							</td>
 						</tr>
@@ -88,7 +89,8 @@
 						</tr>
 						<tr>
 							<td>
-								<h5 style="color:red" th:if="${#fields.hasErrors('handicapIndex')}" th:errors="*{handicapIndex}">
+								<h5 style="color:red" th:if="${#fields.hasErrors('handicapIndex')}"
+									th:errors="*{handicapIndex}">
 									Handicap Index Error</h5>
 							</td>
 						</tr>
@@ -103,6 +105,14 @@
 						</tr>
 					</table>
 				</form>
+				
+				Here are all the registered users:
+				<div th:each="user : ${users}">
+					<!--Post card-->
+					<div class="user-card">
+						<h5 th:text="${user.getUsername()}"></h5>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
