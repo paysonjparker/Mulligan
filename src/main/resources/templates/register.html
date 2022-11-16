@@ -1,12 +1,111 @@
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layouts/defaultLayout">
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Register</title>
-	</head>
-<body>
-	
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layouts/defaultLayout">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Register</title>
+</head>
+
+<body onload="select_bg()">
+	<!--Displays Registration module-->
+	<div layout:fragment="content">
+		<div class="widget-background">
+			<div class="pop-up-widget">
+				<header>
+					<h1>Register</h1>
+				</header>
+
+				<form action="#" th:action="@{doRegister}" th:object="${userModel}" method="post">
+					<table>
+						<tr>
+							<td>
+								<input type="text" placeholder="Username" th:field="*{username}"></input>
+							</td>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<h5 style="color:red" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">
+									Username Error</h5>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="password" placeholder="Password" th:field="*{password}"></input>
+							</td>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<h5 style="color:red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password
+									Error</h5>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="text" placeholder="Name" th:field="*{name}"></input>
+							</td>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<h5 style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">
+									Name Error</h5>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="text" placeholder="Email" th:field="*{email}"></input>
+							</td>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<h5 style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">
+									Email Error</h5>
+							</td>
+						</tr>
+						<tr>
+						<tr>
+							<td>
+								<input type="text" placeholder="Home Course" th:field="*{homeCourse}"></input>
+							</td>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<h5 style="color:red" th:if="${#fields.hasErrors('homeCourse')}" th:errors="*{homeCourse}">
+									Home Course Error</h5>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="text" placeholder="Handicap Index" th:field="*{handicapIndex}"></input>
+							</td>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<h5 style="color:red" th:if="${#fields.hasErrors('handicapIndex')}" th:errors="*{handicapIndex}">
+									Handicap Index Error</h5>
+							</td>
+						</tr>
+						<tr>
+						<tr>
+							<td colspan="2">
+								<button><input type="submit" value="Submit" /></button>
+							</td>
+						</tr>
+						<tr>
+							<td>Already have an account?<br><a href="/login/">Log-in</a> here</td>
+						</tr>
+					</table>
+				</form>
+			</div>
+		</div>
+	</div>
 </body>
 
 </html>

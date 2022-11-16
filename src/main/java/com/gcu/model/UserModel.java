@@ -56,6 +56,13 @@ public class UserModel {
 		this.homeCourse = homeCourse;
 		this.handicapIndex = handicapIndex;
 	}
+	
+	/**
+	 * Default constructor
+	 */
+	public UserModel() {
+		
+	}
 
 	/**
 	 * @return the userId
