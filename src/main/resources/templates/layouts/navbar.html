@@ -6,6 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>navbar</title>
+
 </head>
 
 <body>
@@ -13,38 +14,55 @@
 	<div th:fragment="header">
 		<!--Displays green navbar -->
 		<nav class="navbar" style="border-radius: 0; margin:0px; position:fixed; z-index:3; width:100vw; height:8vw;
-					background-color:#3E8914;">
-			<!--Alternate, responsive design for smaller devices-->
-			<div class="navbar-header">
-				<button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
-					<span class="sr-only">Toggle Navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-			</div>
+					background-color:#386641;">
 
 			<!--Navbar content-->
 			<div id="navbarCollapse" class="collapse navbar-collapse">
 				<!--Logo and website name (positioned left)-->
 				<ul class="nav navbar-nav navbar-left">
-					<li><img th:src="@{/images/whiteLogo.png}" width="112" height="112" style="margin: 5px 0 5px 0;" />
+					<li><img th:src="@{/images/whiteLogo.png}" onclick="location.href='/'" width="112" height="112"
+							style="margin: 5px 0 5px 0;" />
 					</li>
-					<li><a class="navbar-brand" onclick="location.href='/'"
-							style="margin: 5px 0 5px 0; color:white; font-size:40px">Mulligan</a></li>
+					<a class="navbar-brand" style="color:white; font: normal normal bold 80px Myriad Pro;">Mulligan</a>
 
 				</ul>
-				<!--Login and registration options (positioned right)-->
 				<ul class="nav navbar-nav navbar-right">
-					<li><button onclick="location.href='/login/'" class="navbar-button" role="button">Log-in</button></li>
-					<li>
-						<form th:action="@{/login}" method="POST">
-							<input class="navbar-button" value="Log-out" type="submit"></input>
-						</form>
-					</li>
-					<li><button onclick="location.href='/post/'" class="navbar-button" role="button">Post</button></li>
-					<li><button onclick="location.href='/account/'" class="navbar-button" role="button">Account</li>
-					<li><button onclick="location.href='/register/'" class="navbar-button" role="button">Register</li>
+					<li><button onclick="location.href='/login/'" class="navbar-button" role="button" style="border-style: solid;
+						border-radius: 30px;
+						border-width: 2px;
+						border-color: #3E8914;
+						background-color: #3E8914;
+						color:white;
+						margin: 2vw 8px 8px 8px;
+						display: inline-block;
+						font: normal 36px Myriad Pro;">Log-in</button></li>
+					<li><button onclick="location.href='/post/'" class="navbar-button" role="button" style="border-style: solid;
+						border-radius: 30px;
+						border-width: 2px;
+						border-color: #3E8914;
+						background-color: #3E8914;
+						color:white;
+						margin: 2vw 8px 8px 8px;
+						display: inline-block;
+						font: normal 36px Myriad Pro;">Post</button></li>
+					<li><button onclick="location.href='/account/'" class="navbar-button" role="button" style="border-style: solid;
+						border-radius: 30px;
+						border-width: 2px;
+						border-color: #3E8914;
+						background-color: #3E8914;
+						color:white;
+						margin: 2vw 8px 8px 8px;
+						display: inline-block;
+						font: normal 36px Myriad Pro;">Account</li>
+					<li><button onclick="location.href='/register/'" class="navbar-button" role="button" style="border-style: solid;
+						border-radius: 30px;
+						border-width: 2px;
+						border-color: #3E8914;
+						background-color: #3E8914;
+						color:white;
+						margin: 2vw 8px 8px 8px;
+						display: inline-block;
+						font: normal 36px Myriad Pro;">Register</li>
 
 				</ul>
 			</div>
