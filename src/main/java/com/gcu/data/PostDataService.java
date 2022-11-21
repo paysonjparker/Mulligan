@@ -25,45 +25,35 @@ public class PostDataService implements DataAccessInterface<PostModel> {
 	@Autowired
 	@SuppressWarnings("unused")
 	private DataSource dataSource;
-	
+
 	private JdbcTemplate jdbcTemplateObject;
 
-	
 	/**
 	 * @param dataSource
 	 */
 	public PostDataService(DataSource dataSource) {
-		
+
 		this.dataSource = dataSource;
 		this.jdbcTemplateObject = new JdbcTemplate(dataSource);
 	}
 
 	@Override
 	public List<PostModel> findAll() {
-		
+
 		String sql = "SELECT * FROM MulliganDB.post";
 		List<PostModel> posts = new ArrayList<PostModel>();
-		try 
-		{
+		try {
 			// Executes SQL query
 			SqlRowSet srs = jdbcTemplateObject.queryForRowSet(sql);
 			// Loops through results of query
-			while(srs.next()) 
-			{
-				posts.add(new PostModel(srs.getInt("postId"), 
-											srs.getString("content"),
-											srs.getString("postTime"),
-											srs.getString("author")));
+			while (srs.next()) {
+				posts.add(new PostModel(srs.getInt("postId"), srs.getString("content"), srs.getString("postTime"),
+						srs.getString("author")));
 			}
-		}
-		catch(Exception e) 
-		{
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		//test post
-		posts.add(new PostModel(1, "Test post content", "1 pm", "Payson"));
-		
+
 		return posts;
 	}
 
@@ -97,5 +87,4 @@ public class PostDataService implements DataAccessInterface<PostModel> {
 		return false;
 	}
 
-	
 }
