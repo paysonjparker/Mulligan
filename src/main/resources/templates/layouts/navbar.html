@@ -5,7 +5,6 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 	<title>navbar</title>
 </head>
 
@@ -37,15 +36,15 @@
 				</ul>
 				<!--Login and registration options (positioned right)-->
 				<ul class="nav navbar-nav navbar-right">
-					<li><button onclick="location.href='/login/'" class="btn-1" role="button">Log-in</button></li>
+					<li><button onclick="location.href='/login/'" class="navbar-button" role="button">Log-in</button></li>
 					<li>
 						<form th:action="@{/login}" method="POST">
-							<input class="btn-1" value="Log-out" type="submit"></input>
+							<input class="navbar-button" value="Log-out" type="submit"></input>
 						</form>
 					</li>
-					<li><button onclick="location.href='/post/'" class="btn-1" role="button">Post</button></li>
-					<li><button onclick="location.href='/account/'" class="btn-1" role="button">Account</li>
-					<li><button onclick="location.href='/register/'" class="btn-1" role="button">Register</li>
+					<li><button onclick="location.href='/post/'" class="navbar-button" role="button">Post</button></li>
+					<li><button onclick="location.href='/account/'" class="navbar-button" role="button">Account</li>
+					<li><button onclick="location.href='/register/'" class="navbar-button" role="button">Register</li>
 
 				</ul>
 			</div>
