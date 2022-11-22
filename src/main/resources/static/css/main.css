@@ -10,22 +10,39 @@
 	font: normal 2.2vw Myriad Pro;
 }
 
-.post-card{
+.navbar-button-login{
 	border-style: solid;
+	border-radius: 30px;
+	border-width: 2px;
+	border-color: #E7DFC6;
+	background-color: #E7DFC6;
+	color: #131513;
+	margin: 2vw 8px 8px 8px;
+	font: normal 2.2vw Myriad Pro;
+}
+
+.delete-post{
+	border-style: solid;
+	border-radius: 30px;
 	border-width: 2px;
 	border-color: #3E8914;
-	margin: 2vw 8px 8px 8px;
+	background-color: #3E8914;
+	color:white;
+	font: normal 1vw Myriad Pro;
 }
 
-.post-author{
+.post-card{
+	border-style: solid;
+	border-width: 1px;
+	border-color: #3E8914;
+	margin: 8px;
 	text-align: left;
-	letter-spacing: 0px;
-	color: #9F9F9F;
-	opacity: 1;
+	padding: 8px;
+	background: rgb(233, 253, 240) 0% 0% no-repeat padding-box;
 }
 
-.post-date{
-	text-align: center;
+.post-details{
+	text-align: left;
 	letter-spacing: 0px;
 	color: #9F9F9F;
 	opacity: 1;
