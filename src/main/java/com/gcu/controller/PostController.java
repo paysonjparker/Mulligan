@@ -27,7 +27,7 @@ public class PostController {
 
 	@Autowired
 	PostBusinessService service;
-	
+
 	@GetMapping("/")
 	public String display(Model model) {
 		// display the register page.
@@ -54,6 +54,11 @@ public class PostController {
 
 	@GetMapping("/delete")
 	public String delete(Model model, @RequestParam(name = "id", required = true) Integer postId) {
+		// Deletes post
+		service.delete(service.getPostById(postId));
+
+		// Gets updated post list
+		model.addAttribute("posts", service.getPosts());
 		return "index";
 	}
 }
