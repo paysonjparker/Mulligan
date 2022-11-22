@@ -63,7 +63,16 @@ public class PostModel {
 	 * @return the postTime
 	 */
 	public String getPostTime() {
-		return postTime;
+		String tempDate = "";
+		tempDate+= postTime.substring(0, 10); //post date
+		tempDate+= " - ";
+		tempDate+= postTime.substring(11,16); //time numbers
+		if(postTime.substring(11).compareTo("12") > 0) { //if past noon
+			tempDate+=" P.M."; //pm time
+		} else {
+			tempDate+=" A.M."; //am time
+		}
+		return tempDate;
 	}
 
 	/**
