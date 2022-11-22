@@ -9,9 +9,9 @@
 	<title>Main Menu</title>
 </head>
 
-<body>
+<body >
 	<!--Displays main menu-->
-	<div layout:fragment="content">
+	<div layout:fragment="content" style="padding: 8vw;">
 		<main id="posts-main" align="center" class="container d-flex flex-wrap">
 			<!--If user is not logged in, display empty main menu-->
 			<div th:if="${posts.empty}">
