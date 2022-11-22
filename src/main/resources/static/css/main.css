@@ -7,5 +7,19 @@
 	color:white;
 	margin: 2vw 8px 8px 8px;
 	display: inline-block;
-	font: normal 36px Myriad Pro;
+	font: normal 2.2vw Myriad Pro;
+}
+
+@media (max-width: 900px){
+	.navbar-button{
+	border-style: solid;
+	border-radius: 30px;
+	border-width: 2px;
+	border-color: rgb(135, 11, 14);
+	background-color: rgb(135, 21, 123);
+	color:white;
+	margin: 2vw 8px 8px 8px;
+	display: inline-block;
+	font: normal 2.2vw Myriad Pro;
+}
 }
