@@ -93,8 +93,18 @@ public class PostDataService implements DataAccessInterface<PostModel> {
 	}
 
 	@Override
-	public boolean delete(PostModel t) {
-		// TODO Auto-generated method stub
+	public boolean delete(PostModel post) {
+		String sql = "DELETE FROM MulliganDB.post WHERE postId=" + post.getPostId();
+		try
+		{
+		   // Execute SQL
+			jdbcTemplateObject.execute(sql);
+			return true;
+		}
+		catch (Exception e)
+		{
+		    e.printStackTrace();
+		}
 		return false;
 	}
 
