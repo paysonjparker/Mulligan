@@ -1,0 +1,11 @@
+.navbar-button{
+	border-style: solid;
+	border-radius: 30px;
+	border-width: 2px;
+	border-color: #3E8914;
+	background-color: #3E8914;
+	color:white;
+	margin: 2vw 8px 8px 8px;
+	display: inline-block;
+	font: normal 36px Myriad Pro;
+}
