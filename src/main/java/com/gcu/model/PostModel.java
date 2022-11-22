@@ -26,6 +26,10 @@ public class PostModel {
 		this.postTime = postTime;
 		this.author = author;
 	}
+	
+	public PostModel() {
+		
+	}
 
 	/**
 	 * @return the postId
