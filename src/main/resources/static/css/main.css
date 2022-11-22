@@ -10,6 +10,27 @@
 	font: normal 2.2vw Myriad Pro;
 }
 
+.post-card{
+	border-style: solid;
+	border-width: 2px;
+	border-color: #3E8914;
+	margin: 2vw 8px 8px 8px;
+}
+
+.post-author{
+	text-align: left;
+	letter-spacing: 0px;
+	color: #9F9F9F;
+	opacity: 1;
+}
+
+.post-date{
+	text-align: center;
+	letter-spacing: 0px;
+	color: #9F9F9F;
+	opacity: 1;
+}
+
 @media (max-width: 900px){
 	.navbar-button{
 	border-style: solid;
