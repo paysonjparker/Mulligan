@@ -70,9 +70,20 @@ public class PostDataService implements DataAccessInterface<PostModel> {
 	}
 
 	@Override
-	public boolean create(PostModel t) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean create(PostModel post) {
+		//SQL statement to insert user to database
+				String sql = "INSERT INTO MulliganDB.post (`content`, `author`) VALUES (?, ?)";
+				try {
+					// Execute SQL Insert
+					int rows = jdbcTemplateObject.update(sql, post.getContent(),
+							post.getAuthor());
+
+					// Return result of Insert
+					return rows == 1 ? true : false;
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				return false;
 	}
 
 	@Override
