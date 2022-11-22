@@ -1,13 +1,61 @@
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layouts/defaultLayout">
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Post</title>
-	</head>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layouts/defaultLayout">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Post</title>
+</head>
 
 <body>
-	
+	<!--Displays Registration module-->
+	<div layout:fragment="content" style="padding: 8vw;">
+		<div class="widget-background">
+			<div class="pop-up-widget">
+				<header>
+					<h1>Post</h1>
+				</header>
+
+				<form action="#" th:action="@{makePost}" th:object="${postModel}" method="post">
+					<table>
+						<tr>
+							<td>
+								<input type="text" placeholder="Content" th:field="*{content}"></input>
+							</td>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<h5 style="color:red" th:if="${#fields.hasErrors('content')}" th:errors="*{content}">
+									Content Error</h5>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="text" placeholder="Author" th:field="*{author}"></input>
+							</td>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<h5 style="color:red" th:if="${#fields.hasErrors('author')}" th:errors="*{author}">
+									Author
+									Error</h5>
+							</td>
+						</tr>
+						<!-- Submit button -->
+						<tr>
+							<td colspan="2">
+								<button><input type="submit" value="Submit" /></button>
+							</td>
+						</tr>
+					</table>
+				</form>
+
+			</div>
+		</div>
+	</div>
 </body>
 
 </html>
