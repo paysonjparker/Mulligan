@@ -9,7 +9,7 @@
 	<title>Main Menu</title>
 </head>
 
-<body >
+<body>
 	<!--Displays main menu-->
 	<div layout:fragment="content" style="padding: 8vw;">
 		<main id="posts-main" align="center" class="container d-flex flex-wrap">
@@ -21,7 +21,9 @@
 			<div th:each="post : ${posts}">
 				<!--Post card-->
 				<div class="post-card">
-					<h5 th:text="${post.getContent()}"></h5>
+					<h4 th:text="${post.getAuthor()}" class="post-author"></h4>
+					<h5 th:text="${post.getPostTime()}" class="post-date"></h5>
+					<p th:text="${post.getContent()}"></p>
 				</div>
 			</div>
 		</main>
