@@ -21,9 +21,14 @@
 			<div th:each="post : ${posts}">
 				<!--Post card-->
 				<div class="post-card">
-					<h4 th:text="${post.getAuthor()}" class="post-author"></h4>
-					<h5 th:text="${post.getPostTime()}" class="post-date"></h5>
-					<p th:text="${post.getContent()}"></p>
+					<h5 class="post-details">
+						@<span th:text="${post.getAuthor()}"></span>&emsp;&emsp;
+						<span th:text="${post.getPostDate()}"></span>&emsp;&emsp;
+						<span th:text="${post.getPostTime()}"></span>
+					</h5>
+					<h4 th:text="${post.getContent()}" class="post-content"></h4>
+
+					<button class="delete-post">Delete</button>
 				</div>
 			</div>
 		</main>
