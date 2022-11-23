@@ -39,7 +39,7 @@ public class PostController {
 	public String makePost(@Valid PostModel postModel, BindingResult bindingResult, Model model) {
 		// If post credentials are invalid, stay at post view
 		if (bindingResult.hasErrors()) {
-			return "register";
+			return "post";
 		}
 
 		// If register credentials are valid, add post to db and return to main menu
