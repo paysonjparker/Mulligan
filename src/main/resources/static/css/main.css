@@ -10,6 +10,19 @@
 	font: normal 2.2vw Myriad Pro;
 }
 
+.signup-button{
+	border-style: solid;
+	border-radius: 30px;
+	border-width: 2px;
+	border-color: #3E8914;
+	background-color: #3E8914;
+	color:white;
+	margin: 2vw 8px 8px 8px;
+	display: inline-block;
+	font: normal 2.2vw Myriad Pro;
+	text-align: center;
+}
+
 .navbar-button-login{
 	border-style: solid;
 	border-radius: 30px;
@@ -48,7 +61,19 @@
 	opacity: 1;
 }
 
-@media (max-width: 900px){
+.post-textbox{
+	padding: 0;
+	height: 30px;
+	position: relative;
+	left: 0;
+ 	outline: solid;
+  	border: 1px solid #3E8914;
+  	border-color: #3E8914;
+  	background-color: white;
+  	font-size: 16px;
+}
+
+@media (max-width: 1200px){
 	.navbar-button{
 	border-style: solid;
 	border-radius: 30px;
@@ -59,5 +84,7 @@
 	margin: 2vw 8px 8px 8px;
 	display: inline-block;
 	font: normal 2.2vw Myriad Pro;
-}
+	}
+	
+	
 }
