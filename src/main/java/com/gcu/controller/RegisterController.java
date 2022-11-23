@@ -32,7 +32,6 @@ public class RegisterController {
 
 		// display the register page.
 		model.addAttribute("userModel", new UserModel());
-		model.addAttribute("users", service.getUsers());
 		return "register";
 	}
 
