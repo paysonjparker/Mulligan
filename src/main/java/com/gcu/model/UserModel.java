@@ -34,7 +34,6 @@ public class UserModel {
 	@Size(min=6, max=254, message="Home course name must be between 6-36 characters")
 	private String homeCourse;
 	@NotNull(message="Handicap index is a required field")
-//	@NotEmpty(message="Handicap index is a required field")
 	private double handicapIndex;
 	
 	/**
