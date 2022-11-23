@@ -3,6 +3,10 @@
  */
 package com.gcu.model;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 /**
  * @author paysonparker
  *
@@ -10,8 +14,14 @@ package com.gcu.model;
 public class PostModel {
 
 	private int postId;
+	@NotNull(message="Post content is a required field")
+	@NotEmpty(message="Post content is a required field")
+	@Size(min=2, max=280, message="Post content must be between 2-280 characters")
 	private String content;
 	private String postTime;
+	@NotNull(message="Author is a required field")
+	@NotEmpty(message="Author is a required field")
+	@Size(min=2, max=36, message="Authot must be between 2-36 characters")
 	private String author;
 	
 	/**
