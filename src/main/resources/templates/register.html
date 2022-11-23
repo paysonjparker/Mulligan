@@ -22,7 +22,7 @@
 					<table>
 						<tr>
 							<td>
-								<input type="text" placeholder="Username" th:field="*{username}"></input>
+								<input class="post-textbox" type="text" placeholder="Username" th:field="*{username}"></input>
 							</td>
 							</td>
 						</tr>
@@ -34,7 +34,7 @@
 						</tr>
 						<tr>
 							<td>
-								<input type="password" placeholder="Password" th:field="*{password}"></input>
+								<input class="post-textbox" type="password" placeholder="Password" th:field="*{password}"></input>
 							</td>
 							</td>
 						</tr>
@@ -47,7 +47,7 @@
 						</tr>
 						<tr>
 							<td>
-								<input type="text" placeholder="Name" th:field="*{name}"></input>
+								<input class="post-textbox" type="text" placeholder="Name" th:field="*{name}"></input>
 							</td>
 							</td>
 						</tr>
@@ -59,7 +59,7 @@
 						</tr>
 						<tr>
 							<td>
-								<input type="text" placeholder="Email" th:field="*{email}"></input>
+								<input class="post-textbox" type="text" placeholder="Email" th:field="*{email}"></input>
 							</td>
 							</td>
 						</tr>
@@ -72,7 +72,7 @@
 						<tr>
 						<tr>
 							<td>
-								<input type="text" placeholder="Home Course" th:field="*{homeCourse}"></input>
+								<input class="post-textbox" type="text" placeholder="Home Course" th:field="*{homeCourse}"></input>
 							</td>
 							</td>
 						</tr>
@@ -85,7 +85,7 @@
 						</tr>
 						<tr>
 							<td>
-								<input type="text" placeholder="Handicap Index" th:field="*{handicapIndex}"></input>
+								<input class="post-textbox" type="text" placeholder="Handicap Index" th:field="*{handicapIndex}"></input>
 							</td>
 							</td>
 						</tr>
@@ -99,22 +99,14 @@
 						<tr>
 						<tr>
 							<td colspan="2">
-								<button><input type="submit" value="Submit" /></button>
+								<button class="signup-button">Sign up</button>
 							</td>
 						</tr>
 						<tr>
-							<td>Already have an account?<br><a href="/login/">Log-in</a> here</td>
+							<td style="text-align: center;">Already have an account?<br><a href="/login/">Login here</a></td>
 						</tr>
 					</table>
 				</form>
-
-				Here are all the registered users:
-				<div th:each="user : ${users}">
-					<!--Post card-->
-					<div class="user-card">
-						<h5 th:text="${user.getUsername()}"></h5>
-					</div>
-				</div>
 			</div>
 		</div>
 	</div>
