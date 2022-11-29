@@ -70,7 +70,8 @@
   	border: 1px solid #3E8914;
   	border-color: #3E8914;
   	background-color: white;
-  	font-size: 16px;
+  	font-size: 36px;
+  	height: 40px;
 }
 
 @media (max-width: 1200px){
