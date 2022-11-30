@@ -7,18 +7,32 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import com.gcu.model.UserModel;
+
 /**
  * @author paysonparker
  *
  */
 class UserModelTests {
 
+	private UserModel testUser = new UserModel(1, "username", "password", "name", "email@email.com", "homeCourse",
+			10.0);
+
 	/**
-	 * Test method for {@link com.gcu.model.UserModel#UserModel(int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, double)}.
+	 * Test method for
+	 * {@link com.gcu.model.UserModel#UserModel(int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, double)}.
 	 */
 	@Test
 	void testUserModelIntStringStringStringStringStringDouble() {
-		fail("Not yet implemented");
+		UserModel testUserConstruct = new UserModel(2, "userConst", "passConst", "nameConst", "email@email.com",
+				"courseConst", 11.1);
+		assertEquals(2, testUserConstruct.getUserId());
+		assertEquals("userConst", testUserConstruct.getUsername());
+		assertEquals("passConst", testUserConstruct.getPassword());
+		assertEquals("nameConst", testUserConstruct.getName());
+		assertEquals("email@email.com", testUserConstruct.getEmail());
+		assertEquals("courseConst", testUserConstruct.getHomeCourse());
+		assertEquals(11.1, testUserConstruct.getHandicapIndex());
 	}
 
 	/**
@@ -26,7 +40,7 @@ class UserModelTests {
 	 */
 	@Test
 	void testGetUserId() {
-		fail("Not yet implemented");
+		assertEquals(1, testUser.getUserId());
 	}
 
 	/**
@@ -34,7 +48,8 @@ class UserModelTests {
 	 */
 	@Test
 	void testSetUserId() {
-		fail("Not yet implemented");
+		testUser.setUserId(3);
+		assertEquals(3, testUser.getUserId());
 	}
 
 	/**
@@ -42,15 +57,17 @@ class UserModelTests {
 	 */
 	@Test
 	void testGetUsername() {
-		fail("Not yet implemented");
+		assertEquals("username", testUser.getUsername());
 	}
 
 	/**
-	 * Test method for {@link com.gcu.model.UserModel#setUsername(java.lang.String)}.
+	 * Test method for
+	 * {@link com.gcu.model.UserModel#setUsername(java.lang.String)}.
 	 */
 	@Test
 	void testSetUsername() {
-		fail("Not yet implemented");
+		testUser.setUsername("newUser");
+		assertEquals("newUser", testUser.getUsername());
 	}
 
 	/**
@@ -58,15 +75,17 @@ class UserModelTests {
 	 */
 	@Test
 	void testGetPassword() {
-		fail("Not yet implemented");
+		assertEquals("password", testUser.getPassword());
 	}
 
 	/**
-	 * Test method for {@link com.gcu.model.UserModel#setPassword(java.lang.String)}.
+	 * Test method for
+	 * {@link com.gcu.model.UserModel#setPassword(java.lang.String)}.
 	 */
 	@Test
 	void testSetPassword() {
-		fail("Not yet implemented");
+		testUser.setPassword("newPass");
+		assertEquals("newPass", testUser.getPassword());
 	}
 
 	/**
@@ -74,7 +93,8 @@ class UserModelTests {
 	 */
 	@Test
 	void testGetName() {
-		fail("Not yet implemented");
+		assertEquals("name", testUser.getName());
+
 	}
 
 	/**
@@ -82,7 +102,8 @@ class UserModelTests {
 	 */
 	@Test
 	void testSetName() {
-		fail("Not yet implemented");
+		testUser.setName("newName");
+		assertEquals("newName", testUser.getName());
 	}
 
 	/**
@@ -90,7 +111,7 @@ class UserModelTests {
 	 */
 	@Test
 	void testGetEmail() {
-		fail("Not yet implemented");
+		assertEquals("email@email.com", testUser.getEmail());
 	}
 
 	/**
@@ -98,7 +119,8 @@ class UserModelTests {
 	 */
 	@Test
 	void testSetEmail() {
-		fail("Not yet implemented");
+		testUser.setEmail("newEmail@email.com");
+		assertEquals("newEmail@email.com", testUser.getEmail());
 	}
 
 	/**
@@ -106,15 +128,17 @@ class UserModelTests {
 	 */
 	@Test
 	void testGetHomeCourse() {
-		fail("Not yet implemented");
+		assertEquals("homeCourse", testUser.getHomeCourse());
 	}
 
 	/**
-	 * Test method for {@link com.gcu.model.UserModel#setHomeCourse(java.lang.String)}.
+	 * Test method for
+	 * {@link com.gcu.model.UserModel#setHomeCourse(java.lang.String)}.
 	 */
 	@Test
 	void testSetHomeCourse() {
-		fail("Not yet implemented");
+		testUser.setHomeCourse("newCourse");
+		assertEquals("newCourse", testUser.getHomeCourse());
 	}
 
 	/**
@@ -122,7 +146,7 @@ class UserModelTests {
 	 */
 	@Test
 	void testGetHandicapIndex() {
-		fail("Not yet implemented");
+		assertEquals(10.0, testUser.getHandicapIndex());
 	}
 
 	/**
@@ -130,7 +154,8 @@ class UserModelTests {
 	 */
 	@Test
 	void testSetHandicapIndex() {
-		fail("Not yet implemented");
+		testUser.setHandicapIndex(5.4);
+		assertEquals(5.4, testUser.getHandicapIndex());
 	}
 
 }
