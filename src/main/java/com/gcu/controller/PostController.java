@@ -19,15 +19,24 @@ import com.gcu.model.PostModel;
 
 /**
  * @author paysonparker
- *
+ * Post Controller
+ * Controls all flow for post data and the post page.
  */
 @Controller
 @RequestMapping("/post")
 public class PostController {
 
+	/**
+	 * Post business service
+	 */
 	@Autowired
 	PostBusinessService service;
 
+	/**
+	 * Displays the post page.
+	 * @param model Post model.
+	 * @return post page.
+	 */
 	@GetMapping("/")
 	public String display(Model model) {
 		// display the register page.
@@ -35,6 +44,13 @@ public class PostController {
 		return "post";
 	}
 
+	/**
+	 * Makes a post upon the submission of the post form.
+	 * @param postModel Post model being created.
+	 * @param bindingResult Validates data input.
+	 * @param model Model holding attributes.
+	 * @return home page.
+	 */
 	@PostMapping("/makePost")
 	public String makePost(@Valid PostModel postModel, BindingResult bindingResult, Model model) {
 		// If post credentials are invalid, stay at post view
@@ -48,11 +64,23 @@ public class PostController {
 		return "index";
 	}
 
+	/**
+	 * Edits the post upon submission of the edit form.
+	 * @param model Model holding attributes.
+	 * @param postId The ID number of the post being edited.
+	 * @return the edit post page.
+	 */
 	@GetMapping("/editPost")
 	public String editPost(Model model, @RequestParam(name = "id", required = true) Integer postId) {
 		return "editPost";
 	}
 
+	/**
+	 * Deletes a post upon the click of the delete button.
+	 * @param model Model holding attributes.
+	 * @param postId The ID number of the post being deleted.
+	 * @return the home page.
+	 */
 	@GetMapping("/delete")
 	public String delete(Model model, @RequestParam(name = "id", required = true) Integer postId) {
 		// Deletes post
