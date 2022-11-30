@@ -14,21 +14,21 @@ import javax.validation.constraints.Size;
 public class PostModel {
 
 	private int postId;
-	@NotNull(message="Post content is a required field")
-	@NotEmpty(message="Post content is a required field")
-	@Size(min=2, max=280, message="Post content must be between 2-280 characters")
+	@NotNull(message = "Post content is a required field")
+	@NotEmpty(message = "Post content is a required field")
+	@Size(min = 2, max = 280, message = "Post content must be between 2-280 characters")
 	private String content;
 	private String postTime;
-	@NotNull(message="Author is a required field")
-	@NotEmpty(message="Author is a required field")
-	@Size(min=2, max=36, message="Authot must be between 2-36 characters")
+	@NotNull(message = "Author is a required field")
+	@NotEmpty(message = "Author is a required field")
+	@Size(min = 2, max = 36, message = "Authot must be between 2-36 characters")
 	private String author;
-	
+
 	/**
-	 * @param postId Post's unique ID number.
-	 * @param content Post's content.
+	 * @param postId   Post's unique ID number.
+	 * @param content  Post's content.
 	 * @param postTime The date and time of the post.
-	 * @param author The author of the post.
+	 * @param author   The author of the post.
 	 */
 	public PostModel(int postId, String content, String postTime, String author) {
 		this.postId = postId;
@@ -36,9 +36,9 @@ public class PostModel {
 		this.postTime = postTime;
 		this.author = author;
 	}
-	
+
 	public PostModel() {
-		
+
 	}
 
 	/**
@@ -73,14 +73,19 @@ public class PostModel {
 	 * @return the postTime
 	 */
 	public String getPostTime() {
-		String tempTime = "";
-		tempTime+= postTime.substring(11,16); //time numbers
-		if(postTime.substring(11).compareTo("12") > 0) { //if past noon
-			tempTime+=" P.M."; //pm time
+		if (postTime.length() > 10) {
+
+			String tempTime = "";
+			tempTime += postTime.substring(11, 16); // time numbers
+			if (postTime.substring(11).compareTo("12") > 0) { // if past noon
+				tempTime += " P.M."; // pm time
+			} else {
+				tempTime += " A.M."; // am time
+			}
+			return tempTime;
 		} else {
-			tempTime+=" A.M."; //am time
+			return postTime;
 		}
-		return tempTime;
 	}
 
 	/**
@@ -88,10 +93,10 @@ public class PostModel {
 	 */
 	public String getPostDate() {
 		String tempDate = "";
-		tempDate+= postTime.substring(0, 10); //post date
+		tempDate += postTime.substring(0, 10); // post date
 		return tempDate;
 	}
-	
+
 	/**
 	 * @param postTime the postTime to set
 	 */
@@ -112,7 +117,5 @@ public class PostModel {
 	public void setAuthor(String author) {
 		this.author = author;
 	}
-	
-	
-	
+
 }
