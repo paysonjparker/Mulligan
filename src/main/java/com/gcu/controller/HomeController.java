@@ -18,12 +18,12 @@ import com.gcu.business.PostBusinessService;
 public class HomeController {
 
 	@Autowired
-	PostBusinessService productBusinessService;
+	PostBusinessService service;
 
 	@GetMapping("/")
 	public String display(Model model) {
 
-		model.addAttribute("posts", productBusinessService.getPosts());
+		model.addAttribute("posts", service.getPosts());
 		
 		return "index";
 	}
