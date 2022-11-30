@@ -44,7 +44,8 @@ public class PostController {
 
 		// If register credentials are valid, add post to db and return to main menu
 		service.addPost(postModel);
-		return "post";
+		model.addAttribute("posts", service.getPosts());
+		return "index";
 	}
 
 	@GetMapping("/editPost")
