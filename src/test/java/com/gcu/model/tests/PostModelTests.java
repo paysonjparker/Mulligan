@@ -15,13 +15,19 @@ import com.gcu.model.PostModel;
  */
 class PostModelTests {
 
+	private PostModel testPost = new PostModel(1, "content", "time", "author");
+
 	/**
-	 * Test method for {@link com.gcu.model.PostModel#PostModel(int, java.lang.String, java.lang.String, java.lang.String)}.
+	 * Test method for
+	 * {@link com.gcu.model.PostModel#PostModel(int, java.lang.String, java.lang.String, java.lang.String)}.
 	 */
 	@Test
 	void testPostModelIntStringStringString() {
-		PostModel testPost = new PostModel();
-		fail("Not yet implemented");
+		PostModel testPostConstruct = new PostModel(2, "post", "the time", "the author");
+		assertEquals(2, testPostConstruct.getPostId());
+		assertEquals("post", testPostConstruct.getContent());
+		assertEquals("the time", testPostConstruct.getPostTime());
+		assertEquals("the author", testPostConstruct.getAuthor());
 	}
 
 	/**
@@ -29,7 +35,7 @@ class PostModelTests {
 	 */
 	@Test
 	void testGetPostId() {
-		fail("Not yet implemented");
+		assertEquals(1, testPost.getPostId());
 	}
 
 	/**
@@ -37,7 +43,8 @@ class PostModelTests {
 	 */
 	@Test
 	void testSetPostId() {
-		fail("Not yet implemented");
+		testPost.setPostId(2);
+		assertEquals(2, testPost.getPostId());
 	}
 
 	/**
@@ -45,7 +52,7 @@ class PostModelTests {
 	 */
 	@Test
 	void testGetContent() {
-		fail("Not yet implemented");
+		assertEquals("content", testPost.getContent());
 	}
 
 	/**
@@ -53,7 +60,8 @@ class PostModelTests {
 	 */
 	@Test
 	void testSetContent() {
-		fail("Not yet implemented");
+		testPost.setContent("new content");
+		assertEquals("new content", testPost.getContent());
 	}
 
 	/**
@@ -61,15 +69,21 @@ class PostModelTests {
 	 */
 	@Test
 	void testGetPostTime() {
-		fail("Not yet implemented");
+		assertEquals("time", testPost.getPostTime());
 	}
 
 	/**
-	 * Test method for {@link com.gcu.model.PostModel#setPostTime(java.lang.String)}.
+	 * Test method for
+	 * {@link com.gcu.model.PostModel#setPostTime(java.lang.String)}.
 	 */
 	@Test
 	void testSetPostTime() {
-		fail("Not yet implemented");
+		testPost.setPostTime("new time");
+		assertEquals("new time", testPost.getPostTime());
+		testPost.setPostTime("2022-10-26 16:39:16");
+		assertEquals("16:39 P.M.", testPost.getPostTime());
+		testPost.setPostTime("2022-10-28 11:03:47");
+		assertEquals("11:03 A.M.", testPost.getPostTime());
 	}
 
 	/**
@@ -77,7 +91,7 @@ class PostModelTests {
 	 */
 	@Test
 	void testGetAuthor() {
-		fail("Not yet implemented");
+		assertEquals("author", testPost.getAuthor());
 	}
 
 	/**
@@ -85,7 +99,8 @@ class PostModelTests {
 	 */
 	@Test
 	void testSetAuthor() {
-		fail("Not yet implemented");
+		testPost.setAuthor("new author");
+		assertEquals("new author", testPost.getAuthor());
 	}
 
 }
