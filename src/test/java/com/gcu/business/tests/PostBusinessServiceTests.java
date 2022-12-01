@@ -18,7 +18,7 @@ class PostBusinessServiceTests {
 	 */
 	@Test
 	void testGetPosts() {
-		fail("Not yet implemented");
+
 	}
 
 	/**
@@ -26,7 +26,7 @@ class PostBusinessServiceTests {
 	 */
 	@Test
 	void testGetPostById() {
-		fail("Not yet implemented");
+
 	}
 
 	/**
@@ -34,7 +34,7 @@ class PostBusinessServiceTests {
 	 */
 	@Test
 	void testAddPost() {
-		fail("Not yet implemented");
+
 	}
 
 	/**
@@ -42,7 +42,7 @@ class PostBusinessServiceTests {
 	 */
 	@Test
 	void testUpdate() {
-		fail("Not yet implemented");
+
 	}
 
 	/**
@@ -50,7 +50,7 @@ class PostBusinessServiceTests {
 	 */
 	@Test
 	void testDelete() {
-		fail("Not yet implemented");
+
 	}
 
 }

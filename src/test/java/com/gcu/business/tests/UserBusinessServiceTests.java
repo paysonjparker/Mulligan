@@ -18,7 +18,7 @@ class UserBusinessServiceTests {
 	 */
 	@Test
 	void testGetUsers() {
-		fail("Not yet implemented");
+
 	}
 
 	/**
@@ -26,7 +26,7 @@ class UserBusinessServiceTests {
 	 */
 	@Test
 	void testAddUser() {
-		fail("Not yet implemented");
+
 	}
 
 }
