@@ -40,7 +40,7 @@ public class HomeController {
 		if (bindingResult.hasErrors()) {
 			return "post";
 		}
-
+		
 		// If register credentials are valid, add post to db and return to main menu
 		model.addAttribute("posts", service.getPosts());
 		return "index";

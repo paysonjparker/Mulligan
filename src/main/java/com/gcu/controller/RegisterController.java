@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.gcu.business.PostBusinessService;
 import com.gcu.business.UserBusinessService;
 import com.gcu.model.UserModel;
 
@@ -25,7 +26,10 @@ import com.gcu.model.UserModel;
 public class RegisterController {
 
 	@Autowired
-	UserBusinessService service;
+	UserBusinessService userService;
+	
+	@Autowired
+	PostBusinessService postService;
 
 	@GetMapping("/")
 	public String display(Model model) {
@@ -43,12 +47,12 @@ public class RegisterController {
 		}
 
 		// If register credentials are valid, add user to db and return to main menu
-		service.addUser(userModel);
+		userService.addUser(userModel);
 
 		// Returns empty product list
-//		model.addAttribute("posts", postBusinessService.getPosts());
+		model.addAttribute("posts", postService.getPosts());
 
 		// Returns main menu view
-		return "register";
+		return "index";
 	}
 }
