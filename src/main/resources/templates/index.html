@@ -12,6 +12,19 @@
 <body>
 	<!--Displays main menu-->
 	<div layout:fragment="content" style="padding: 8vw;">
+	
+	<div class="search-bar">
+		<form action="#" th:action="@{doSearch}" th:object="${postModel}" method="post">
+					<table>
+						<tr>
+							<td>
+								<input class="post-textbox" type="text" placeholder="Search"></input>
+								<button class="search-button">Search</button>
+							</td>
+						</tr>
+					</table>
+				</form>
+	</div>
 		<main id="posts-main" align="center" class="container d-flex flex-wrap">
 			<!--If user is not logged in, display empty main menu-->
 			<div th:if="${posts.empty}">
