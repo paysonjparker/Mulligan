@@ -74,6 +74,22 @@
   	height: 40px;
 }
 
+.search-bar{
+	padding: 4px;
+	text-align: left;
+}
+
+.search-button{
+	border-style: solid;
+	border-radius: 30px;
+	border-width: 2px;
+	border-color: #E7DFC6;
+	background-color: #E7DFC6;
+	color: #131513;
+	margin: 2vw 8px 8px 8px;
+	font: normal 2.2vw Myriad Pro;
+}
+
 @media (max-width: 1200px){
 	.navbar-button{
 	border-style: solid;
