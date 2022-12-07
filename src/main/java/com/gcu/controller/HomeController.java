@@ -18,22 +18,34 @@ import com.gcu.model.UserModel;
 
 /**
  * @author paysonparker
- *
+ * Home page controller.
  */
 @Controller
 public class HomeController {
 
 	@Autowired
-	PostBusinessService service;
+	PostBusinessService service; //post business service for accessing post data layer.
 
+	/**
+	 * Displays home page.
+	 * @param model Model being passed to the view.
+	 * @return the home page.
+	 */
 	@GetMapping("/")
 	public String display(Model model) {
 
-		model.addAttribute("posts", service.getPosts());
+		model.addAttribute("posts", service.getPosts()); //gets all posts so they can be displayed on home page.
 		
 		return "index";
 	}
 	
+	/**
+	 * Executes the seach method.
+	 * @param postModel PostModel being searched for.
+	 * @param bindingResult Checks for errors in search input.
+	 * @param model Model being passed to the view.
+	 * @return The home page.
+	 */
 	@PostMapping("/doSearch")
 	public String doSearch(@Valid PostModel postModel, BindingResult bindingResult, Model model) {
 		// If post credentials are invalid, stay at post view
@@ -41,7 +53,7 @@ public class HomeController {
 			return "post";
 		}
 		
-		// If register credentials are valid, add post to db and return to main menu
+		// if search is successful return the found posts.
 		model.addAttribute("posts", service.getPosts());
 		return "index";
 	}

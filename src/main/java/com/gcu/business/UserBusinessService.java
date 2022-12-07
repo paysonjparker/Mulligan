@@ -13,13 +13,13 @@ import com.gcu.model.UserModel;
 
 /**
  * @author paysonparker
- *
+ * User Business service class.
  */
 @Service
 public class UserBusinessService {
 
 	@Autowired
-	private DataAccessInterface<UserModel> service;
+	private DataAccessInterface<UserModel> service; //implemented data access interface with UserModel data type
 
 	/**
 	 * Returns all Users from database

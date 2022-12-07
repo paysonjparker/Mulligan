@@ -13,13 +13,13 @@ import com.gcu.model.PostModel;
 
 /**
  * @author paysonparker
- *
+ * Post Business service class.
  */
 @Service
 public class PostBusinessService {
 
 	@Autowired
-	DataAccessInterface<PostModel> service;
+	DataAccessInterface<PostModel> service; //implemented data access interface with PostModel data type
 	
 	/**
 	 * Returns all posts from database

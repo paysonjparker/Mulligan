@@ -18,9 +18,7 @@ import com.gcu.business.PostBusinessService;
 import com.gcu.model.PostModel;
 
 /**
- * @author paysonparker
- * Post Controller
- * Controls all flow for post data and the post page.
+ * @author paysonparker Post page controller.
  */
 @Controller
 @RequestMapping("/post")
@@ -34,12 +32,12 @@ public class PostController {
 
 	/**
 	 * Displays the post page.
-	 * @param model Post model.
-	 * @return post page.
+	 * 
+	 * @param model Model being passed to the view.
+	 * @return the post page.
 	 */
 	@GetMapping("/")
 	public String display(Model model) {
-		// display the register page.
 		model.addAttribute("postModel", new PostModel());
 		return "post";
 	}
@@ -48,8 +46,8 @@ public class PostController {
 	 * Makes a post upon the submission of the post form.
 	 * @param postModel Post model being created.
 	 * @param bindingResult Validates data input.
-	 * @param model Model holding attributes.
-	 * @return home page.
+	 * @param model Model being passed to the view.
+	 * @return the home page.
 	 */
 	@PostMapping("/makePost")
 	public String makePost(@Valid PostModel postModel, BindingResult bindingResult, Model model) {
@@ -58,7 +56,7 @@ public class PostController {
 			return "post";
 		}
 
-		// If register credentials are valid, add post to db and return to main menu
+		// If post credentials are valid, add post to db and return to main menu
 		service.addPost(postModel);
 		model.addAttribute("posts", service.getPosts());
 		return "index";
@@ -66,7 +64,7 @@ public class PostController {
 
 	/**
 	 * Edits the post upon submission of the edit form.
-	 * @param model Model holding attributes.
+	 * @param model  Model holding attributes.
 	 * @param postId The ID number of the post being edited.
 	 * @return the edit post page.
 	 */
@@ -77,7 +75,7 @@ public class PostController {
 
 	/**
 	 * Deletes a post upon the click of the delete button.
-	 * @param model Model holding attributes.
+	 * @param model  Model holding attributes.
 	 * @param postId The ID number of the post being deleted.
 	 * @return the home page.
 	 */

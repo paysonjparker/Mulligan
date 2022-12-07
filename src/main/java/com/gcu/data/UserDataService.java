@@ -17,20 +17,25 @@ import com.gcu.model.UserModel;
 
 /**
  * @author paysonparker
- * 
+ * User data service for accessing user data from the database.
  */
 @Service
 public class UserDataService implements DataAccessInterface<UserModel> {
 
+	/**
+	 * Data source.
+	 */
 	@Autowired
 	@SuppressWarnings("unused")
 	private DataSource dataSource;
 
+	/**
+	 * JDBC template object.
+	 */
 	private JdbcTemplate jdbcTemplateObject;
 
 	/**
 	 * Constructor for this class. Creates a a new instance of this class.
-	 * 
 	 * @param dataSource Source of user data.
 	 */
 	public UserDataService(DataSource dataSource) {
@@ -48,12 +53,12 @@ public class UserDataService implements DataAccessInterface<UserModel> {
 			while (srs.next()) {
 				users.add(new UserModel(srs.getInt("userId"), srs.getString("username"), srs.getString("password"),
 						srs.getString("name"), srs.getString("email"), srs.getString("homeCourse"),
-						srs.getDouble("handicapIndex")));
+						srs.getDouble("handicapIndex"))); //creates a new user object and adds it to the list
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return users;
+		return users; //return list of users.
 	}
 
 	@Override
@@ -64,6 +69,7 @@ public class UserDataService implements DataAccessInterface<UserModel> {
 
 	@Override
 	public UserModel findByUsername(String username) {
+		//SQL statement for selecting a user by their ID number.
 		String sql = String.format("SELECT * FROM MulliganDB.user WHERE username='%s'", username);
 		// Initializes product as empty model
 		UserModel user = null;
@@ -80,7 +86,7 @@ public class UserDataService implements DataAccessInterface<UserModel> {
 			e.printStackTrace();
 		}
 
-		return user;
+		return user; //return the found user if it is found.
 	}
 
 	@Override

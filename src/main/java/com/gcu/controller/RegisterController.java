@@ -19,26 +19,43 @@ import com.gcu.model.UserModel;
 
 /**
  * @author paysonparker
- *
+ * Register page controller.
  */
 @Controller
 @RequestMapping("/register")
 public class RegisterController {
 
+	/**
+	 * User business service.
+	 */
 	@Autowired
 	UserBusinessService userService;
 	
+	/**
+	 * Post business service.
+	 */
 	@Autowired
 	PostBusinessService postService;
 
+	/**
+	 * Displays the register page.
+	 * @param model Model being passed to the view.
+	 * @return The home page.
+	 */
 	@GetMapping("/")
 	public String display(Model model) {
 
-		// display the register page.
 		model.addAttribute("userModel", new UserModel());
 		return "register";
 	}
 
+	/**
+	 * Executes a user register into the database.
+	 * @param userModel User Model being created.
+	 * @param bindingResult Used for checking input errors.
+	 * @param model Model being passed to the view.
+	 * @return the home page after a user is registered.
+	 */
 	@PostMapping("/doRegister")
 	public String doRegister(@Valid UserModel userModel, BindingResult bindingResult, Model model) {
 		// If register credentials are invalid, stay at register view
@@ -46,10 +63,10 @@ public class RegisterController {
 			return "register";
 		}
 
-		// If register credentials are valid, add user to db and return to main menu
+		// If register credentials are valid, add user to database and return to main menu
 		userService.addUser(userModel);
 
-		// Returns empty product list
+		// Returns the product list
 		model.addAttribute("posts", postService.getPosts());
 
 		// Returns main menu view

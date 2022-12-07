@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * @author paysonparker
- * 
+ * Data access interface.
  * @param <T> Anonymous data type. Could be either UserModel or PostModel.
  */
 public interface DataAccessInterface <T> {
