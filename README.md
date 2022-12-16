@@ -5,7 +5,7 @@
 ##### Mulligan also provides golf clubs and golf leagues a way to communicate with their members. For example, a golf league could create its own page on this site and post all the news/events of that league to this site as way to communicate with members. Mulligan’s goal is to reach all corners of the social aspect in the golf community to provide golfers with those connections.
 
 ## Technologies
-<img width="247" alt="image" src="https://user-images.githubusercontent.com/90354190/208188752-06f86598-74a3-415b-a754-7c91fd46268c.png">
+<img width="720" alt="image" src="https://user-images.githubusercontent.com/90354190/208188752-06f86598-74a3-415b-a754-7c91fd46268c.png">
 
 ## Logical System Architecture
 <img width="720" alt="image" src="https://user-images.githubusercontent.com/90354190/208188601-e4251718-34f3-4998-8903-ccb20de9b20f.png">
