@@ -9,4 +9,5 @@
 
 ## Logical System Architecture
 This diagram shows the design of the logical solution of this project. A primary focus of this project is to design it in N-tier architecture, so each tier of the project, and the details of that layer, are displayed in this diagram. To summarize, the project will consist of a client layer, presentation layer, business layer, data access layer, and a data persistence layer. Each of these layers can access ONLY the layer directly above and below itself. Within each container of this diagram are the logical operations of its respective layer.
+
 <img width="400" alt="image" src="https://user-images.githubusercontent.com/90354190/208188601-e4251718-34f3-4998-8903-ccb20de9b20f.png">
