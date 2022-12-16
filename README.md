@@ -8,4 +8,4 @@
 <img width="247" alt="image" src="https://user-images.githubusercontent.com/90354190/208188752-06f86598-74a3-415b-a754-7c91fd46268c.png">
 
 ## Logical System Architecture
-<img width="456" alt="image" src="https://user-images.githubusercontent.com/90354190/208188601-e4251718-34f3-4998-8903-ccb20de9b20f.png">
+<img width="720" alt="image" src="https://user-images.githubusercontent.com/90354190/208188601-e4251718-34f3-4998-8903-ccb20de9b20f.png">
