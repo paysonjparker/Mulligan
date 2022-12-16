@@ -10,6 +10,18 @@
 	font: normal 2.2vw Myriad Pro;
 }
 
+.navbar-button:hover{
+	border-style: solid;
+	border-radius: 30px;
+	border-width: 2px;
+	border-color: #FFFFFF;
+	background-color: #3E8914;
+	color:white;
+	margin: 2vw 8px 8px 8px;
+	display: inline-block;
+	font: normal 2.2vw Myriad Pro;
+}
+
 .signup-button{
 	border-style: solid;
 	border-radius: 30px;
@@ -23,11 +35,35 @@
 	text-align: center;
 }
 
+.signup-button:hover{
+	border-style: solid;
+	border-radius: 30px;
+	border-width: 2px;
+	border-color: black;
+	background-color: #3E8914;
+	color:white;
+	margin: 2vw 8px 8px 8px;
+	display: inline-block;
+	font: normal 2.2vw Myriad Pro;
+	text-align: center;
+}
+
 .navbar-button-login{
 	border-style: solid;
 	border-radius: 30px;
 	border-width: 2px;
 	border-color: #E7DFC6;
+	background-color: #E7DFC6;
+	color: #131513;
+	margin: 2vw 8px 8px 8px;
+	font: normal 2.2vw Myriad Pro;
+}
+
+.navbar-button-login:hover{
+	border-style: solid;
+	border-radius: 30px;
+	border-width: 2px;
+	border-color: black;
 	background-color: #E7DFC6;
 	color: #131513;
 	margin: 2vw 8px 8px 8px;
