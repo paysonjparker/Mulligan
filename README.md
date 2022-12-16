@@ -26,5 +26,3 @@ The MySQL database, titled MulliganDB, will consist of two tables. Each table co
 <img width="271" alt="image" src="https://user-images.githubusercontent.com/90354190/208189707-f8067ebe-6185-433d-917b-425d5257e480.png"> 
 <img width="461" alt="image" src="https://user-images.githubusercontent.com/90354190/208189744-14a04f1b-f2e2-483e-bd08-cb371c9d098b.png"> 
 <img width="461" alt="image" src="https://user-images.githubusercontent.com/90354190/208189823-ce67c5e7-e578-4710-8b69-b0cec6da10d4.png">
-
-<img width="271" alt="image" src="https://user-images.githubusercontent.com/90354190/208189707-f8067ebe-6185-433d-917b-425d5257e480.png"> <img width="461" alt="image" src="https://user-images.githubusercontent.com/90354190/208189744-14a04f1b-f2e2-483e-bd08-cb371c9d098b.png"> 
