@@ -28,7 +28,7 @@
 		<main id="posts-main" align="center" class="container d-flex flex-wrap">
 			<!--If user is not logged in, display empty main menu-->
 			<div th:if="${posts.empty}">
-				<p align="center">There are currently no posts available.</p>
+				<p align="center">There are currently no posts.<br><a href="/post/">Make a post here!</a></p>
 			</div>
 			<!--Else, display each Post-->
 			<div th:each="post : ${posts}">
