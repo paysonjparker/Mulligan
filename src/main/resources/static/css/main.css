@@ -15,7 +15,7 @@
 	border-radius: 30px;
 	border-width: 2px;
 	border-color: #FFFFFF;
-	background-color: #3E8914;
+	background-color: #55bc1b;
 	color:white;
 	margin: 2vw 8px 8px 8px;
 	display: inline-block;
@@ -38,9 +38,9 @@
 .signup-button:hover{
 	border-style: solid;
 	border-radius: 30px;
-	border-width: 2px;
+	border-width: 3px;
 	border-color: black;
-	background-color: #3E8914;
+	background-color: #55bc1b;
 	color:white;
 	margin: 2vw 8px 8px 8px;
 	display: inline-block;
@@ -64,7 +64,7 @@
 	border-radius: 30px;
 	border-width: 2px;
 	border-color: black;
-	background-color: #E7DFC6;
+	background-color: #d6c89d;
 	color: #131513;
 	margin: 2vw 8px 8px 8px;
 	font: normal 2.2vw Myriad Pro;
@@ -77,6 +77,16 @@
 	border-color: #3E8914;
 	background-color: #3E8914;
 	color:white;
+	font: normal 1vw Myriad Pro;
+}
+
+.delete-post:hover{
+	border-style: solid;
+	border-radius: 30px;
+	border-width: 2px;
+	border-color: black;
+	background-color: red;
+	color:black;
 	font: normal 1vw Myriad Pro;
 }
 
@@ -121,6 +131,17 @@
 	border-width: 2px;
 	border-color: #E7DFC6;
 	background-color: #E7DFC6;
+	color: #131513;
+	margin: 2vw 8px 8px 8px;
+	font: normal 2.2vw Myriad Pro;
+}
+
+.search-button:hover{
+	border-style: solid;
+	border-radius: 30px;
+	border-width: 3px;
+	border-color: black;
+	background-color: #d6c89d;
 	color: #131513;
 	margin: 2vw 8px 8px 8px;
 	font: normal 2.2vw Myriad Pro;
