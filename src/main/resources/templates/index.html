@@ -1,43 +1,48 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	layout:decorate="layouts/defaultLayout">
 
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Main Menu</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Main Menu</title>
+
 </head>
 
 <body>
 	<!--Displays main menu-->
 	<div layout:fragment="content" style="padding: 8vw;">
-	
-	<div class="search-bar">
-		<form action="#" th:action="@{doSearch}" th:object="${postModel}" method="post">
-					<table>
-						<tr>
-							<td>
-								<input class="post-textbox" type="text" placeholder="Search"></input>
-								<button class="search-button">Search</button>
-							</td>
-						</tr>
-					</table>
-				</form>
-	</div>
-		<main id="posts-main" align="center" class="container d-flex flex-wrap">
+		<div class="search-bar">
+			<form action="#" th:action="@{doSearch}" th:object="${postModel}"
+				method="post">
+				<table>
+					<tr>
+						<td><input class="post-textbox" type="text"
+							placeholder="Search"></input>
+							<button class="search-button">Search</button></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		<main id="posts-main" align="center"
+			class="container d-flex flex-wrap">
 			<!--If user is not logged in, display empty main menu-->
 			<div th:if="${posts.empty}">
-				<p align="center">There are currently no posts.<br><a href="/post/">Make a post here!</a></p>
+				<p align="center">
+					There are currently no posts.<br> <a href="/post/">Make a
+						post here!</a>
+				</p>
 			</div>
 			<!--Else, display each Post-->
 			<div th:each="post : ${posts}">
 				<!--Post card-->
 				<div class="post-card">
 					<h5 class="post-details">
-						@<span th:text="${post.getAuthor()}"></span>&emsp;&emsp;
-						<span th:text="${post.getPostDate()}"></span>&emsp;&emsp;
-						<span th:text="${post.getPostTime()}"></span>
+						@<span th:text="${post.getAuthor()}"></span>&emsp;&emsp; <span
+							th:text="${post.getPostDate()}"></span>&emsp;&emsp; <span
+							th:text="${post.getPostTime()}"></span>
 					</h5>
 					<h4 th:text="${post.getContent()}" class="post-content"></h4>
 
