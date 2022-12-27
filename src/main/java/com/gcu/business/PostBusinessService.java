@@ -66,4 +66,8 @@ public class PostBusinessService {
 	{
 		service.delete(post);
 	}
+	
+	public List<PostModel> search(String searchContent){
+		return service.search(searchContent);
+	}
 }
