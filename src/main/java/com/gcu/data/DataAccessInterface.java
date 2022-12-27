@@ -52,4 +52,6 @@ public interface DataAccessInterface <T> {
 	 * @return If the entity was successfully deleted.
 	 */
 	public boolean delete(T t);
+	
+	public List<T> search(String searchContent);
 }
