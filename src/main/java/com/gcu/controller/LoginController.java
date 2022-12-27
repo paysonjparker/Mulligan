@@ -55,7 +55,7 @@ public class LoginController {
 		if (bindingResult.hasErrors()) {
 			return "login";
 		}
-
+		
 		// Returns the product list
 		model.addAttribute("posts", postService.getPosts());
 
