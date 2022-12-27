@@ -23,8 +23,8 @@ import com.gcu.model.PostModel;
 public class PostDataService implements DataAccessInterface<PostModel> {
 
 	/**
-	 * Constructor for this class. Creates a a new instance of this class.
-	 * Data source for connecting to database.
+	 * Constructor for this class. Creates a a new instance of this class. Data
+	 * source for connecting to database.
 	 */
 	@Autowired
 	@SuppressWarnings("unused")
@@ -77,7 +77,6 @@ public class PostDataService implements DataAccessInterface<PostModel> {
 
 	@Override
 	public PostModel findByUsername(String username) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -105,16 +104,36 @@ public class PostDataService implements DataAccessInterface<PostModel> {
 
 	@Override
 	public boolean delete(PostModel post) {
-		//SQL statement for deleting a post.
+		// SQL statement for deleting a post.
 		String sql = "DELETE FROM MulliganDB.post WHERE postId=" + post.getPostId();
 		try {
 			// Execute SQL
 			jdbcTemplateObject.execute(sql);
-			return true; //return true if deleted
+			return true; // return true if deleted
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return false; //return false if not deleted
+		return false; // return false if not deleted
+	}
+
+	@Override
+	public List<PostModel> search(String searchContent) {
+		// SQL statement to search for content in posts.
+		String sql = "SELECT * FROM MulliganDB.post WHERE post.content LIKE '%" + searchContent + "%'";
+
+		List<PostModel> posts = new ArrayList<PostModel>();
+		try {
+			// Executes SQL query
+			SqlRowSet srs = jdbcTemplateObject.queryForRowSet(sql);
+			// Loops through results of query
+			while (srs.next()) {
+				posts.add(new PostModel(srs.getInt("postId"), srs.getString("content"), srs.getString("postTime"),
+						srs.getString("author"))); // create a new post object and add it to the list
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return posts;
 	}
 
 }
