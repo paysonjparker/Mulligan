@@ -9,32 +9,46 @@
 	<title>Login</title>
 </head>
 
-<body onload="select_bg()">
+<body>
 	<!--Displays login module-->
 	<div layout:fragment="content" style="padding: 8vw;">
 		<div class="widget-background">
 			<div class="pop-up-widget">
 				<header>
-					<h1>Log-in</h1>
+					<h1>Login</h1>
 				</header>
 
-				<div th:if="${param.error}">
-					Invalid User Name or Password.
-				</div>
-				<form th:action="@{/login}" method="post">
+				<form action="#" th:action="@{doLogin}" th:object="${userModel}" method="post">
 					<table>
 						<tr>
-							<td style="padding:5px">User Name:</td>
-							<td style="padding:5px"><input type="text" name="username" id="username"
-									placeholder="Username" required /></td>
+							<td>
+								<label>Username</label><br>
+								<input class="post-textbox" type="text" th:field="*{username}"></input>
+							</td>
 						</tr>
 						<tr>
-							<td style="padding:5px">Password:</td>
-							<td style="padding:5px"><input type="password" name="password" id="password"
-									placeholder="Password" required /></td>
+							<td>
+								<h5 style="color:red" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">
+									Username Error</h5>
+							</td>
 						</tr>
 						<tr>
-							<td colspan="2" align="center"><input type="submit" value="Sign In" /></td>
+							<td>
+								<label>Password</label><br>
+								<input class="post-textbox" type="password" th:field="*{password}"></input>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<h5 style="color:red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">
+									Password
+									Error</h5>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<button class="signup-button">Sign in</button>
+							</td>
 						</tr>
 						<tr>
 							<td><br>Don't have an account?<br><a href="/register/">Create one</a> for free!</td>
