@@ -119,4 +119,10 @@ public class UserDataService implements DataAccessInterface<UserModel> {
 		return false;
 	}
 
+	@Override
+	public List<UserModel> search(String searchContent) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
