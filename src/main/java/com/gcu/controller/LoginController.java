@@ -51,7 +51,7 @@ public class LoginController {
 	
 	@PostMapping("/doLogin")
 	public String doLogin(@Valid UserModel userModel, BindingResult bindingResult, Model model) {
-		// If register credentials are invalid, stay at login
+		// If login credentials are invalid, stay at login
 		if (bindingResult.hasErrors()) {
 			return "login";
 		}
