@@ -38,5 +38,14 @@ public class UserBusinessService {
 	public void addUser(UserModel user) {
 		service.create(user);
 	}
+	
+	/**
+	 * Finds a user by username.
+	 * @param username username being searched.
+	 * @return The UserModel of that username if it is found.
+	 */
+	public UserModel getUserByUsername(String username) {
+		return service.findByUsername(username);
+	}
 
 }
