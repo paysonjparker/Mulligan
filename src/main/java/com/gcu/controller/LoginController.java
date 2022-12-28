@@ -60,6 +60,6 @@ public class LoginController {
 		model.addAttribute("posts", postService.getPosts());
 
 		// Returns main menu view
-		return "index";
+		return "redirect:/";
 	}
 }

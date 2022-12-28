@@ -40,6 +40,6 @@ public class HomeController {
 		
 		// if search is successful return the found posts.
 		model.addAttribute("posts", service.search(search));
-		return "index";
+		return "redirect:/";
 	}
 }

@@ -70,6 +70,6 @@ public class RegisterController {
 		model.addAttribute("posts", postService.getPosts());
 
 		// Returns main menu view
-		return "index";
+		return "redirect:/";
 	}
 }

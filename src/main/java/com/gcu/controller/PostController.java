@@ -58,7 +58,7 @@ public class PostController {
 		// If post credentials are valid, add post to db and return to main menu
 		service.addPost(postModel);
 		model.addAttribute("posts", service.getPosts());
-		return "index";
+		return "redirect:/";
 	}
 
 	/**
