@@ -19,6 +19,9 @@ import com.gcu.business.PostBusinessService;
 @Controller
 public class HomeController {
 
+	/**
+	 * Post business service.
+	 */
 	@Autowired
 	PostBusinessService postBusinessService; //post business service for accessing post data layer.
 
@@ -35,6 +38,12 @@ public class HomeController {
 		return "index";
 	}
 	
+	/**
+	 * Executes a search for a specified string in each post.
+	 * @param search The string being searched for.
+	 * @param model Model being passed to the view.
+	 * @return the home page, displaying all the posts found that contain the search term.
+	 */
 	@PostMapping("/doSearch")
 	public String doSearch(String search, Model model) {
 		
