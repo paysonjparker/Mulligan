@@ -1,5 +1,7 @@
 com.gcu
 com.gcu.business
+com.gcu.business.tests
 com.gcu.controller
 com.gcu.data
 com.gcu.model
+com.gcu.model.tests
