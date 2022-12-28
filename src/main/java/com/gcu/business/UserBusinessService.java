@@ -19,7 +19,7 @@ import com.gcu.model.UserModel;
 public class UserBusinessService {
 
 	@Autowired
-	private DataAccessInterface<UserModel> service; //implemented data access interface with UserModel data type
+	private DataAccessInterface<UserModel> userDataService; //implemented data access interface with UserModel data type
 
 	/**
 	 * Returns all Users from database
@@ -27,7 +27,7 @@ public class UserBusinessService {
 	 * @return list of Users
 	 */
 	public List<UserModel> getUsers() {
-		return service.findAll();
+		return userDataService.findAll(); //gets all exsiting posts from the database
 	}
 
 	/**
@@ -36,7 +36,7 @@ public class UserBusinessService {
 	 * @param user User model being added to the database.
 	 */
 	public void addUser(UserModel user) {
-		service.create(user);
+		userDataService.create(user); //creates a new userModel and adds it to the database
 	}
 	
 	/**
@@ -45,7 +45,7 @@ public class UserBusinessService {
 	 * @return The UserModel of that username if it is found.
 	 */
 	public UserModel getUserByUsername(String username) {
-		return service.findByUsername(username);
+		return userDataService.findByUsername(username); //gets a single user by the specified ID number
 	}
 
 }

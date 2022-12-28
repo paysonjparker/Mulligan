@@ -19,7 +19,7 @@ import com.gcu.model.PostModel;
 public class PostBusinessService {
 
 	@Autowired
-	DataAccessInterface<PostModel> service; //implemented data access interface with PostModel data type
+	DataAccessInterface<PostModel> postDataService; //implemented data access interface with PostModel data type
 	
 	/**
 	 * Returns all posts from database
@@ -27,7 +27,7 @@ public class PostBusinessService {
 	 */
 	public List<PostModel> getPosts()
 	{
-		return service.findAll();
+		return postDataService.findAll(); //gets all existing posts from database
 	}
 	
 	/**
@@ -37,7 +37,7 @@ public class PostBusinessService {
 	 */
 	public PostModel getPostById(int id)
 	{
-		return service.findById(id);
+		return postDataService.findById(id); //finds a single post associated with the given ID number
 	}
 	
 	/**
@@ -46,7 +46,7 @@ public class PostBusinessService {
 	 */
 	public void addPost(PostModel post)
 	{
-		service.create(post);
+		postDataService.create(post); //creates a new postModel object and adds it to the database
 	}
 
 	/**
@@ -55,7 +55,7 @@ public class PostBusinessService {
 	 */
 	public void update(PostModel post) 
 	{
-		service.update(post);
+		postDataService.update(post); //Updates a specified post 
 	}
 
 	/**
@@ -64,10 +64,10 @@ public class PostBusinessService {
 	 */
 	public void delete(PostModel post) 
 	{
-		service.delete(post);
+		postDataService.delete(post); //deletes a specified post
 	}
 	
 	public List<PostModel> search(String searchContent){
-		return service.search(searchContent);
+		return postDataService.search(searchContent); //searches for a specific string with post content and returns a list of all posts containing that string
 	}
 }
