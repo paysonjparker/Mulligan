@@ -29,13 +29,13 @@ public class RegisterController {
 	 * User business service.
 	 */
 	@Autowired
-	UserBusinessService userService;
+	UserBusinessService userBusinessService;
 	
 	/**
 	 * Post business service.
 	 */
 	@Autowired
-	PostBusinessService postService;
+	PostBusinessService postBusinessService;
 
 	/**
 	 * Displays the register page.
@@ -64,10 +64,10 @@ public class RegisterController {
 		}
 
 		// If register credentials are valid, add user to database and return to main menu
-		userService.addUser(userModel);
+		userBusinessService.addUser(userModel);
 
 		// Returns the product list
-		model.addAttribute("posts", postService.getPosts());
+		model.addAttribute("posts", postBusinessService.getPosts());
 
 		// Returns main menu view
 		return "redirect:/";

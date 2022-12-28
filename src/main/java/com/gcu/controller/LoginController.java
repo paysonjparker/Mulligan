@@ -29,13 +29,13 @@ public class LoginController {
 	 * User business service.
 	 */
 	@Autowired
-	UserBusinessService userService;
+	UserBusinessService userBusinessService;
 	
 	/**
 	 * Post business service.
 	 */
 	@Autowired
-	PostBusinessService postService;
+	PostBusinessService postBusinessService;
 	
 	/**
 	 * Displays login page.
@@ -57,7 +57,7 @@ public class LoginController {
 		}
 		
 		// Returns the product list
-		model.addAttribute("posts", postService.getPosts());
+		model.addAttribute("posts", postBusinessService.getPosts());
 
 		// Returns main menu view
 		return "redirect:/";

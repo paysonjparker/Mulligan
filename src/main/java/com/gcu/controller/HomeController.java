@@ -20,7 +20,7 @@ import com.gcu.business.PostBusinessService;
 public class HomeController {
 
 	@Autowired
-	PostBusinessService service; //post business service for accessing post data layer.
+	PostBusinessService postBusinessService; //post business service for accessing post data layer.
 
 	/**
 	 * Displays home page.
@@ -30,7 +30,7 @@ public class HomeController {
 	@GetMapping("/")
 	public String display(Model model) {
 
-		model.addAttribute("posts", service.getPosts()); //gets all posts so they can be displayed on home page.
+		model.addAttribute("posts", postBusinessService.getPosts()); //gets all posts so they can be displayed on home page.
 		
 		return "index";
 	}
@@ -39,7 +39,7 @@ public class HomeController {
 	public String doSearch(String search, Model model) {
 		
 		// if search is successful return the found posts.
-		model.addAttribute("posts", service.search(search));
+		model.addAttribute("posts", postBusinessService.search(search));
 		return "index";
 	}
 }

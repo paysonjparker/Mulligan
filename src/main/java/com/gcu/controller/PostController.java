@@ -27,7 +27,7 @@ public class PostController {
 	 * Post business service
 	 */
 	@Autowired
-	PostBusinessService service;
+	PostBusinessService postBusinessService;
 
 	/**
 	 * Displays the post page.
@@ -56,8 +56,8 @@ public class PostController {
 		}
 
 		// If post credentials are valid, add post to db and return to main menu
-		service.addPost(postModel);
-		model.addAttribute("posts", service.getPosts());
+		postBusinessService.addPost(postModel);
+		model.addAttribute("posts", postBusinessService.getPosts());
 		return "redirect:/";
 	}
 
@@ -81,10 +81,10 @@ public class PostController {
 	@GetMapping("/delete")
 	public String delete(Model model, @RequestParam(name = "id", required = true) Integer postId) {
 		// Deletes post
-		service.delete(service.getPostById(postId));
+		postBusinessService.delete(postBusinessService.getPostById(postId));
 
 		// Gets updated post list
-		model.addAttribute("posts", service.getPosts());
+		model.addAttribute("posts", postBusinessService.getPosts());
 		return "index";
 	}
 }
