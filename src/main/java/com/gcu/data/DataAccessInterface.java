@@ -53,5 +53,10 @@ public interface DataAccessInterface <T> {
 	 */
 	public boolean delete(T t);
 	
+	/**
+	 * Searches for posts that contain a specified string.
+	 * @param searchContent String being searched for.
+	 * @return A list of entities that contain the specified search term.
+	 */
 	public List<T> search(String searchContent);
 }
