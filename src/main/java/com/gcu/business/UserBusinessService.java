@@ -18,6 +18,9 @@ import com.gcu.model.UserModel;
 @Service
 public class UserBusinessService {
 
+	/**
+	 * User data service.
+	 */
 	@Autowired
 	private DataAccessInterface<UserModel> userDataService; //implemented data access interface with UserModel data type
 
