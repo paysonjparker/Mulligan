@@ -18,6 +18,9 @@ import com.gcu.model.PostModel;
 @Service
 public class PostBusinessService {
 
+	/**
+	 * Post data service.
+	 */
 	@Autowired
 	DataAccessInterface<PostModel> postDataService; //implemented data access interface with PostModel data type
 	
@@ -67,6 +70,11 @@ public class PostBusinessService {
 		postDataService.delete(post); //deletes a specified post
 	}
 	
+	/**
+	 * Searches for a specified string within the content of every post. Adds each post that contains that string to a List.
+	 * @param searchContent Content being searched for.
+	 * @return A list of post models containing the search string.
+	 */
 	public List<PostModel> search(String searchContent){
 		return postDataService.search(searchContent); //searches for a specific string with post content and returns a list of all posts containing that string
 	}
