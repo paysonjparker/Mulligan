@@ -49,6 +49,13 @@ public class LoginController {
 		return "login";
 	}
 	
+	/**
+	 * Executes a user login.
+	 * @param userModel User logging in.
+	 * @param bindingResult Checks for errors in login input.
+	 * @param model Model being passed to the view.
+	 * @return The login page if unsuccessful or the home page if successful.
+	 */
 	@PostMapping("/doLogin")
 	public String doLogin(@Valid UserModel userModel, BindingResult bindingResult, Model model) {
 		// If login credentials are invalid, stay at login
